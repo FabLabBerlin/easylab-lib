@@ -20,6 +20,7 @@ import (
 const (
 	DEBUG                    = false
 	NO_TLS                   = false
+	USE_STARTTLS             = true
 	TLS_INSECURE_SKIP_VERIFY = false
 	USE_SERVER_SESSION       = true
 	RECONNECT_INIT_WAIT_TIME = time.Second
@@ -69,6 +70,7 @@ func NewXmpp(server, user, pass string, debugPrint func(string, ...interface{}))
 		User:          user,
 		Password:      pass,
 		NoTLS:         NO_TLS,
+		StartTLS:      USE_STARTTLS,
 		Debug:         DEBUG,
 		Session:       USE_SERVER_SESSION,
 		Status:        STATUS,
